@@ -68,3 +68,7 @@ if __name__ == "__main__":
     print(leggi_da_file("/home/samupy/SamuPython/Enaip_esame/Enaip_esame_042025/dati/test.json"))
     print(processa_dati(lista_test))
     print(processa_dati(leggi_da_file("/home/samupy/SamuPython/Enaip_esame/Enaip_esame_042025/dati/test.json")))
+
+    dizionario = leggi_da_file("Enaip_esame_042025/dati/test.json")
+    attivi = processa_dati(dizionario)
+    print(attivi)
