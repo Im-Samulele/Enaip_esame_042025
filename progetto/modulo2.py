@@ -8,7 +8,7 @@ def leggi_da_file(filepath):
     except FileNotFoundError:
         return None
 
-def processa_dati(dati):
+def processa_dati(dati:list): 
     """
     Questa funzione dovrebbe processare una lista di dizionari.
     Implementa la logica per filtrare i dizionari che hanno una chiave 'attivo'
@@ -16,4 +16,54 @@ def processa_dati(dati):
     della chiave 'id' di questi dizionari.
     """
     # TODO: Implementare la logica di processamento dei dati
-    pass
+    lista_attivi = []
+
+    for diz in dati:
+        if diz["attivo"] == True:
+            lista_attivi.append(diz["id"])
+
+    return lista_attivi
+
+if __name__ == "__main__":
+    lista_test = [
+        {
+      "id": 1,
+      "nome": "Prodotto A",
+      "prezzo": 25.99,
+      "attivo": True
+    },
+    {
+      "id": 2,
+      "nome": "Prodotto B",
+      "prezzo": 12.50,
+      "attivo": False
+    },
+    {
+      "id": 3,
+      "nome": "Servizio X",
+      "durata": "1 ora",
+      "attivo": True
+    },
+    {
+      "id": 4,
+      "nome": "Prodotto C",
+      "prezzo": 55.00,
+      "attivo": True,
+      "in_offerta": True
+    },
+    {
+      "id": 5,
+      "nome": "Servizio Y",
+      "durata": "30 minuti",
+      "attivo": False
+    },
+    {
+      "id": 6,
+      "nome": "Libro1",
+      "categoria": "Libro",
+      "titolo": "Guida Python",
+      "attivo": True
+    }
+    ]
+    print(leggi_da_file("/home/samupy/SamuPython/Enaip_esame/Enaip_esame_042025/dati/test.json"))
+    print(processa_dati(lista_test))
