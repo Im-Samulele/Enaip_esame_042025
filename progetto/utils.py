@@ -16,4 +16,7 @@ def formatta_stringa(testo):
     con la prima lettera di ogni parola in maiuscolo.
     """
     # TODO: Implementare la formattazione della stringa
-    pass
+    return testo.title()
+
+if __name__ == "__main__":
+    print(formatta_stringa("ciao, sono mario e ho 135 anni"))
