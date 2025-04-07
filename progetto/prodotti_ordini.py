@@ -20,4 +20,11 @@ class Ordine:
         Questo metodo dovrebbe calcolare il totale dell'ordine.
         """
         # TODO: Implementare il calcolo del totale dell'ordine
-        pass
+        totale = 0
+        
+        for prod in self.prodotti:
+            totale += prod.prezzo
+
+        return totale
+            
+        
